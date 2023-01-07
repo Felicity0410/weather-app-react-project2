@@ -1,0 +1,11 @@
+
+.weather-card .weather-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightblue;  
+    width: 100%;
+    color: darkblue
+}
+
+
