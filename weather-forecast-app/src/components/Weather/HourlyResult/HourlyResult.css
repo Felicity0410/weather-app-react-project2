@@ -1,0 +1,29 @@
+.hourly-info {
+    width: 400px;
+    background-color: lightblue;
+    min-height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+.hourly-item div {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    border-radius: 10px;
+}
+
+
+
+.hourly-info .carousel-indicators {
+    margin-bottom: 0;
+}
+
+.hourly-info .carousel-indicators button {
+    margin: 0 3px;
+}

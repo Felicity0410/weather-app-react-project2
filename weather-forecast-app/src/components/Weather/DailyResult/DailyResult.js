@@ -1,0 +1,1 @@
+import './DailyResult.css'

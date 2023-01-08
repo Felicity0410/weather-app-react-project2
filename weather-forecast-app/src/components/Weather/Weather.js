@@ -3,9 +3,8 @@ import './Weather.css'
 import { useState } from 'react';
 import SearchCity from './SearchCity/SearchCity';
 import WeatherResult from './WeatherResult/WeatherResult';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import HourlyResult from './HourlyResult/HourlyResult';
 
 const Weather = () => {
 
@@ -23,22 +22,17 @@ const Weather = () => {
                     <h1>Weather Forecast 🌤️</h1>
                     <SearchCity search={onSearch}/>  
                 </Card.Header>
-                <Card.Body>
-                    <div>
+                <Card.Body className='weather-body'>
+                    <div className='weather-main'>
                         {weather && <WeatherResult weather={weather}/>}
+                    </div>
+                    <div className='weather-hourly'>
+                        {weather && <HourlyResult weather={weather}/>}
                     </div>                  
-                </Card.Body>
+                </Card.Body>                
                 <Card.Footer className="text-muted">By Zhenhong Liu</Card.Footer>
             </Card>
-            {/* <div className='weather'>
-                <header className='weather-header'>
-                    <h1>Weather Forecast 🌤️</h1>
-                    <SearchCity search={onSearch}/>              
-                </header>
-                <div>
-                {weather && <WeatherResult weather={weather}/>}
-                </div>
-            </div> */}
+
         </>
     );
 }

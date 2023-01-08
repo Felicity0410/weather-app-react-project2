@@ -1,0 +1,82 @@
+.weather-mainInfo-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+    border: 2px solid #eee;
+    box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.2);;
+    border-radius: 10px;
+    color: darkblue;
+}
+
+.weather-info-topPart,
+.weather-info-bottomPart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-info-topPart {
+    justify-content: space-around;
+}
+
+.weather-info-location {
+    display: flex;
+    flex-direction: column;
+    margin-right: rem;
+    justify-content: flex-start;
+}
+.weather-info-location p {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(108, 108, 108);
+}
+
+.location-info {
+    text-align: left;
+}
+.weather-info-location .location-info h2{
+    margin-right: 5px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.weather-info-location .location-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: rgb(108, 108, 108);
+}
+
+.weather-info-icon img {
+    width: 6rem;
+}
+
+
+
+.weather-info-bottomPart .weather-temperature,
+.weather-info-bottomPart .weather-details {
+    padding: 10px;
+}
+
+.weather-temperature h2{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.weather-details div {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgb(108, 108, 108);
+}
+.weather-details div label {
+    text-align: left;
+}
+.weather-details div p {
+    margin-bottom: 0;
+    margin-left: 20px;
+    
+}

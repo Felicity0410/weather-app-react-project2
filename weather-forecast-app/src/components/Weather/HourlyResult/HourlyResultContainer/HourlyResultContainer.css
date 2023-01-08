@@ -1,0 +1,30 @@
+.individualHoulyInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80px;
+    max-height: 100px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid darkblue;
+    margin: 0 0;
+}
+
+.individualHoulyInfo p {
+    font-size: 10px;
+    color: darkblue;
+    font-weight: 600;
+    margin: 5px;
+}
+
+.icon-container {
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.individualHoulyInfo img {
+    width: 90%;
+
+}

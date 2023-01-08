@@ -1,4 +1,11 @@
-.search input {
+.search {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start;
+    align-items: center; */
+
+}
+.search-input input {
     min-width: 150px;
     padding: 7px 10px;
     border-radius: 5px;
@@ -6,13 +13,28 @@
     transition: 0.3s ease;
  }
  
-.search input:focus {
-     min-width: 200px;
+.search-input input:focus {
+     min-width: 250px;
  }
-.search button {
+.search-input button {
      font-size: medium;
      margin-left: 5px;
      padding: 3px 6px;
      border-radius: 5px;
      cursor: pointer;
  }
+
+.search-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px;
+    font-size: small;
+    font-weight: 600;
+}
+
+.search-checkbox input {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+
