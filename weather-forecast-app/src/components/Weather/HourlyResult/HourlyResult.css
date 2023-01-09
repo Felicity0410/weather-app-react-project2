@@ -1,11 +1,17 @@
+h5 {
+    text-align: left;
+}
+
 .hourly-info {
     width: 400px;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     min-height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
+    border: 2px solid #eee;
+    box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 

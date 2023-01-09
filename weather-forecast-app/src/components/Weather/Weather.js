@@ -5,6 +5,7 @@ import SearchCity from './SearchCity/SearchCity';
 import WeatherResult from './WeatherResult/WeatherResult';
 import Card from 'react-bootstrap/Card';
 import HourlyResult from './HourlyResult/HourlyResult';
+import DailyResult from './DailyResult/DailyResult';
 
 const Weather = () => {
 
@@ -14,6 +15,7 @@ const Weather = () => {
     const onSearch = (weatherData) => {
         setWeather(weatherData)
     }
+
 
     return (
         <>
@@ -26,9 +28,14 @@ const Weather = () => {
                     <div className='weather-main'>
                         {weather && <WeatherResult weather={weather}/>}
                     </div>
-                    <div className='weather-hourly'>
-                        {weather && <HourlyResult weather={weather}/>}
-                    </div>                  
+                    <div>                    
+                        <div className='weather-hourly'>
+                            {weather && <HourlyResult weather={weather}/>}
+                        </div> 
+                        <div className='weather-daily'>
+                            {weather && <DailyResult weather={weather}/>}
+                        </div>   
+                    </div>              
                 </Card.Body>                
                 <Card.Footer className="text-muted">By Zhenhong Liu</Card.Footer>
             </Card>

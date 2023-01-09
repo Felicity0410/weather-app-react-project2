@@ -3,6 +3,8 @@ import './WeatherResult.css'
 const WeatherResult = (props) => {
     const location = props.weather.location
     const current = props.weather.current
+    const tempNum = (tempStr) => Math.ceil(parseFloat(tempStr))
+
     return (
         <div className='weather-mainInfo-card'>
             <div className='weather-info-topPart'>
@@ -20,7 +22,7 @@ const WeatherResult = (props) => {
             </div>
             <div className='weather-info-bottomPart'>
                 <div className='weather-temperature'>
-                    <h2>{current.temp_c}&#8451;</h2>
+                    <h2>{tempNum(current.temp_c)}&#8451;</h2>
                 </div>
                 <div className='weather-details'>
                     <div>

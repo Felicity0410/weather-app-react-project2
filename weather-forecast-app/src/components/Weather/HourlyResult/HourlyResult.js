@@ -53,6 +53,8 @@ const HourlyResult = (props) => {
 
 
     return (
+        <>
+        <h5>Hourly</h5>
         <Carousel slide={false} className='hourly-info' interval={null}>
             <Carousel.Item className='hourly-item'>
              <div>
@@ -95,6 +97,7 @@ const HourlyResult = (props) => {
               </div>
             </Carousel.Item>
      </Carousel>
+     </>
     );
 }
 

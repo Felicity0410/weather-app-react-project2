@@ -5,7 +5,7 @@ export const fetchWeatherByCity = async (city) => {
     const url = new URL(FETCH_CITY_WEATHER_URL)
     url.searchParams.append('key', API_KEY)
     url.searchParams.append('q', city)
-    url.searchParams.append('days', '3')
+    url.searchParams.append('days', '5')
     url.searchParams.append('aqi', 'true')
     url.searchParams.append('alerts', 'true')
 

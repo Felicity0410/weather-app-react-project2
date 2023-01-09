@@ -4,9 +4,10 @@
     max-width: 300px;
     width: 100%;
     border: 2px solid #eee;
-    box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.2);;
+    box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     color: darkblue;
+    padding: 10px;
 }
 
 .weather-info-topPart,
@@ -48,6 +49,23 @@
     font-size: 1rem;
     margin-bottom: 0;
     color: rgb(108, 108, 108);
+}
+
+@keyframes moveSideToSide {
+    0% {
+        transform: translateX(-15%);
+    }
+    50% {
+        transform: translateX(15%);
+    }
+    100% {
+        transform: translateX(-15%);
+    }
+}
+
+.weather-info-icon {
+    animation: moveSideToSide 10s infinite;
+
 }
 
 .weather-info-icon img {

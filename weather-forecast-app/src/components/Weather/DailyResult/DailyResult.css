@@ -1,0 +1,67 @@
+h5 {
+    text-align: left;
+}
+.daily-item .daily-header button{
+    color: darkblue;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    border: 1px  #eee;
+    box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.daily-item .daily-header .accordion-button::after {
+    margin-left: 10px;
+    color: darkblue;
+    width: 13px;
+    background-size: 13px;
+}
+
+.daily-item .daily-header button>div {
+    text-align: left;
+    margin-right: 0px;
+
+}
+
+.daily-item .daily-header button>p {
+    margin: 0 0;
+    text-align: left;
+
+}
+
+.daily-item .daily-header button img {
+    width: 2rem;
+}
+
+.daily-temp {
+    display: flex;
+}
+
+.daily-temp .temp-divider {
+    color: gray;
+    margin: 0 10px;
+}
+
+.daily-body {
+    display: block;
+    font-size: 10px;
+    color: gray;
+    font-weight: 600;
+   
+}
+.daily-body div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.daily-body div .daily-body-item {
+    display: flex;
+
+}
+
+.daily-body div .daily-body-item p {
+    margin: 0 5px 0 0;
+}

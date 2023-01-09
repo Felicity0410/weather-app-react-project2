@@ -1,6 +1,9 @@
 import './HourlyResultContainer.css'
 
 const HourlyResultContainer = (props) => {
+
+    const tempNum = (tempStr) => Math.ceil(parseFloat(tempStr))
+
     return (
         <div className='individualHoulyInfo'>
             <p>{props.hourlyIndividualInfo.hour}</p>
@@ -8,7 +11,7 @@ const HourlyResultContainer = (props) => {
             <img src={props.hourlyIndividualInfo.icon} alt='weather icon'/>
             </div>
             
-            <p>{props.hourlyIndividualInfo.temperature}&#8451;</p>
+            <p>{tempNum(props.hourlyIndividualInfo.temperature)}&#8451;</p>
         </div>
     );
 }
