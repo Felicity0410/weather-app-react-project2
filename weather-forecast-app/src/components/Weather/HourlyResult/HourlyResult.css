@@ -32,4 +32,20 @@ h5 {
 
 .hourly-info .carousel-indicators button {
     margin: 0 3px;
+    background-color: darkblue;
+    
+}
+
+.hourly-info .carousel-control-prev
+.carousel-control-prev-icon {
+    background-color: darkblue;
+    width: 20px;
+    border-radius: 5px;
+}
+
+.hourly-info .carousel-control-next
+.carousel-control-next-icon {
+    background-color: darkblue;
+    width: 20px;
+    border-radius: 5px;
 }

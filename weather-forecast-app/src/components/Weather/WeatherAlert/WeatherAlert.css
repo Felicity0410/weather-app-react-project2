@@ -1,0 +1,12 @@
+.alter {
+    width: 300px;
+    margin: 1rem auto;
+}
+
+.alter .alter-heading {
+    font-size: 20px;
+}
+
+.alter p {
+    font-size: 10px;
+}

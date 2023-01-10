@@ -1,0 +1,15 @@
+.spinner {
+    color: darkblue;
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+.spinner .spinner-border {
+    width: 2rem;
+    height: 2rem;
+}
+
+.spinner .spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
