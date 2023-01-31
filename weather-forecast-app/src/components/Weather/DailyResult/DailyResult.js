@@ -6,6 +6,7 @@ const DailyResult = (props) => {
     const secondDayInfo = props.weather.forecast.forecastday[1]
     const thirdDayInfo = props.weather.forecast.forecastday[2]
     
+    
     const dayArray = ['Sun','Mon' ,'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
     const dayConvert = (dayInfo) => {               
         const day = new Date(dayInfo).getDay()

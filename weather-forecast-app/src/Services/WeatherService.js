@@ -16,6 +16,7 @@ export const fetchWeatherByCity = async (city) => {
         return data
     } catch (error) {
         console.error('from weather services',error);
+        return error
     }
     
 }

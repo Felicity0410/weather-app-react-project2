@@ -1,0 +1,81 @@
+.error-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.error-card {
+    background-color: #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;  
+    margin: 2rem auto;
+
+    position: fixed;
+    top: 5vh;
+    left: 30%;
+    width: 35%;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.error-card-header {
+    background: lightblue;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    color: darkblue;
+}
+
+.error-card-header div {
+    font-size: 3rem;
+    margin-left: 5px;
+}
+
+.error-card-header p {
+    margin: 10px 0 0 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    
+}
+
+.error-card-content {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.error-card-action {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.error-card-action button {
+    font: inherit;
+    font-weight: bold;
+    border: 1px solid darkblue;
+    background-color: darkblue;
+    color: white;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+
+button:hover, 
+button:active {
+    background: lightblue;
+    border-color: lightblue;
+    color: darkblue;
+}
+
+button:focus {
+    outline: none;
+}
+

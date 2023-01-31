@@ -8,6 +8,7 @@ import DailyResult from './DailyResult/DailyResult';
 import Spinner from '../Spinner/Spinner';
 import WeatherAlert from './WeatherAlert/WeatherAlert';
 import AirQuality from './AirQuality/AirQuality';
+import SearchError from './SearchError/SearchError';
 
 const alters = {
     "alert":[
@@ -51,6 +52,7 @@ const Weather = () => {
     //初始时，还没有city，更不会有weather，所以不用''空string，而是undefined，还没有被定义的
    const [alter, setAlert] = useState(undefined)
    const [airQuality, setAirQuality] = useState(undefined)
+   const [searchError, setSearchError] = useState(undefined)
 
     const onSearch = (weatherData) => setWeather(weatherData)
     const onSetLoading = (loading) => setLoading(loading)
@@ -58,15 +60,22 @@ const Weather = () => {
         setAirQuality(check)
         console.log('from weather', check);
     } 
-    
+
+    const onSetSearchError = (error) => {
+        console.log('from weather',error);
+        setSearchError(error)
+    }
+      
     useEffect(() => {
-        setAlert(alters)
+        setAlert(alters)      
     }, [weather])
+
     
     let weatherResult = <h4>Please submit a search... </h4>
     if(loading) {
         weatherResult = <Spinner/>
-    } else if (weather){
+    } 
+    else if (weather){
 
     //    if (weather.alters) {
     //         setAlert(weather.alters)
@@ -95,13 +104,13 @@ const Weather = () => {
             <Card className="text-center weather-card">
                 <Card.Header className="weather-header">
                     <h1>Weather Forecast 🌤️</h1>
-                    <SearchCity search={onSearch} setLoading={onSetLoading} setCheckBox={onSetCheckBox} />  
+                    <SearchCity search={onSearch} setLoading={onSetLoading} setCheckBox={onSetCheckBox} setSearchError={onSetSearchError}/>  
                 </Card.Header>
                 <Card.Body className='weather-body'>
+                    {searchError && <SearchError searchError={searchError} onErrorDismiss={() => setSearchError(undefined)}/>}
                    {weatherResult}                                          
-              </Card.Body>
-                        
-                <Card.Footer className="text-muted">By Zhenhong Liu</Card.Footer>
+              </Card.Body>                       
+                <Card.Footer className="text-muted">By ZHL</Card.Footer>
             </Card>
 
         </>

@@ -5,8 +5,9 @@ const US_EPA_STANDARD = ['', 'Good', 'Moderate', 'Unhealthy for sensitive group'
 
 const AirQuality = (props) => {
 
-    const airQualityData = props.weather.forecast.forecastday[0].hour[0].air_quality
-    console.log(props.weather.forecast.forecastday[0].hour[0]);
+    // const airQualityData = props.weather.forecast.forecastday[0].hour[0].air_quality
+    const airQualityData = props.weather.current.air_quality
+  
 
     const usEpaIndex = airQualityData["us-epa-index"]
     const co = parseInt(airQualityData.co)
