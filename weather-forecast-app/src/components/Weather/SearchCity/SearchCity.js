@@ -2,6 +2,8 @@ import './SearchCity.css'
 import { FcSearch } from 'react-icons/fc';
 import { useEffect, useState } from 'react';
 import { fetchWeatherByCity } from '../../../Services/WeatherService';
+import { getUserIpLocation } from '../../../Services/Ipgeolation';
+
 
 
 
@@ -59,7 +61,23 @@ const SearchCity = (props) => {
         props.setCheckBox(check)
     }, [check, props])
 
-
+    
+    useEffect(() => {
+        const getCityByIp = async () => {
+            const city = await getUserIpLocation()
+            props.setLoading(true) 
+            const weatherData = await fetchWeatherByCity(city)
+            if(weatherData.error) {
+                props.setSearchError(weatherData.error.message)
+                props.setLoading(false)
+                return
+            }
+            props.search(weatherData)
+            props.setCheckBox(check)
+            props.setLoading(false)
+        }
+        getCityByIp()
+    }, [props, check])
 
 
     const onSearchButtonClick = async (event) => { 

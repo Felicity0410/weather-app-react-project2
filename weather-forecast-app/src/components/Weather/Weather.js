@@ -10,6 +10,8 @@ import WeatherAlert from './WeatherAlert/WeatherAlert';
 import AirQuality from './AirQuality/AirQuality';
 import SearchError from './SearchError/SearchError';
 
+
+
 const alters = {
     "alert":[
         {
@@ -65,12 +67,14 @@ const Weather = () => {
         console.log('from weather',error);
         setSearchError(error)
     }
+
+    
       
     useEffect(() => {
         setAlert(alters)      
     }, [weather])
-
     
+
     let weatherResult = <h4>Please submit a search... </h4>
     if(loading) {
         weatherResult = <Spinner/>
@@ -80,8 +84,7 @@ const Weather = () => {
     //    if (weather.alters) {
     //         setAlert(weather.alters)
     //    }
-        
-        
+               
         weatherResult = <>
         <div className='weather-main'>
             <WeatherResult weather={weather}/>
