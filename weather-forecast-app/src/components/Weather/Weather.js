@@ -9,7 +9,10 @@ import Spinner from '../Spinner/Spinner';
 import WeatherAlert from './WeatherAlert/WeatherAlert';
 import AirQuality from './AirQuality/AirQuality';
 import SearchError from './SearchError/SearchError';
-
+import { getUserIpCity } from '../../Services/Ip2location';
+import { fetchWeatherByCity } from '../../Services/WeatherService';
+import { BsFillMoonFill } from 'react-icons/bs';
+import { BsSunFill } from 'react-icons/bs';
 
 
 const alters = {
@@ -55,6 +58,7 @@ const Weather = () => {
    const [alter, setAlert] = useState(undefined)
    const [airQuality, setAirQuality] = useState(undefined)
    const [searchError, setSearchError] = useState(undefined)
+   const [theme, setTheme] = useState('light')
 
     const onSearch = (weatherData) => setWeather(weatherData)
     const onSetLoading = (loading) => setLoading(loading)
@@ -68,11 +72,43 @@ const Weather = () => {
         setSearchError(error)
     }
 
+    const onThemeButtonClick = () => {
+        if(theme === 'light') {
+            setTheme('dark')
+        } else {
+            setTheme('light')
+        }
+    }
+
+    useEffect(() => {
+        document.body.className = theme
+    }, [theme])
+
     
       
     useEffect(() => {
         setAlert(alters)      
     }, [weather])
+
+    useEffect(() => {
+        const getCityByIp = async () => {
+            setLoading(true) 
+            // const city = await getUserIpLocation()
+            const city = await getUserIpCity()       
+            const weatherData = await fetchWeatherByCity(city)
+            if(weatherData.error) {
+                setSearchError(weatherData.error.message)
+                setLoading(false)
+                return
+            }
+            setWeather(weatherData)
+            setAirQuality(false)
+            setLoading(false)
+        }
+        getCityByIp()
+    }, [])
+
+    
     
 
     let weatherResult = <h4>Please submit a search... </h4>
@@ -104,16 +140,17 @@ const Weather = () => {
 
     return (
         <>
-            <Card className="text-center weather-card">
+            <Card className='text-center weather-card'>
                 <Card.Header className="weather-header">
                     <h1>Weather Forecast 🌤️</h1>
-                    <SearchCity search={onSearch} setLoading={onSetLoading} setCheckBox={onSetCheckBox} setSearchError={onSetSearchError}/>  
+                    <SearchCity search={onSearch} setLoading={onSetLoading} setCheckBox={onSetCheckBox} setSearchError={onSetSearchError}/> 
+                    <button className='theme-button' onClick={onThemeButtonClick} value={theme}>{theme === 'dark' ? <BsSunFill/> : <BsFillMoonFill />} Theme</button> 
                 </Card.Header>
-                <Card.Body className='weather-body'>
+                <Card.Body className={`weather-body ${theme}`}>
                     {searchError && <SearchError searchError={searchError} onErrorDismiss={() => setSearchError(undefined)}/>}
-                   {weatherResult}                                          
+                    {weatherResult}                                          
               </Card.Body>                       
-                <Card.Footer className="text-muted">By ZHL</Card.Footer>
+                <Card.Footer className="weather-footer">By ZHL</Card.Footer>
             </Card>
 
         </>

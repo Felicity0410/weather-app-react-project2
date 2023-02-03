@@ -8,6 +8,13 @@
     color: darkblue
 }
 
+.weather-card .weather-header .theme-button {
+    border-radius: 10px;
+    border: 2px solid darkblue;
+    color: darkblue;
+    font-size: 13px;
+}
+
 
 .weather-card .weather-body {
     display: flex;
@@ -15,6 +22,39 @@
     align-items: center;
 }
 
+.weather-card .weather-footer {
+    background-color: lightblue;
+    font-weight: 600;
+    color: darkblue;
+}
 
+.dark {
+    background-color: #333;
+    color: #fff;
+    }
+
+.light {
+    background-color: #fff;
+    color: darkblue;
+    }
+
+@media screen and (max-width: 450px) {
+    .weather-card .weather-header {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .weather-card .weather-header .theme-button {
+        display: flex;
+        align-self: flex-end;
+    }
+
+    .weather-card .weather-body {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
 
 

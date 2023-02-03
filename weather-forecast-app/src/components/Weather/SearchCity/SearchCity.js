@@ -2,7 +2,8 @@ import './SearchCity.css'
 import { FcSearch } from 'react-icons/fc';
 import { useEffect, useState } from 'react';
 import { fetchWeatherByCity } from '../../../Services/WeatherService';
-import { getUserIpLocation } from '../../../Services/Ipgeolation';
+// import { getUserIpLocation } from '../../../Services/Ipgeolation';
+// import { getUserIpCity } from '../../../Services/Ip2location';
 
 
 
@@ -62,22 +63,23 @@ const SearchCity = (props) => {
     }, [check, props])
 
     
-    useEffect(() => {
-        const getCityByIp = async () => {
-            const city = await getUserIpLocation()
-            props.setLoading(true) 
-            const weatherData = await fetchWeatherByCity(city)
-            if(weatherData.error) {
-                props.setSearchError(weatherData.error.message)
-                props.setLoading(false)
-                return
-            }
-            props.search(weatherData)
-            props.setCheckBox(check)
-            props.setLoading(false)
-        }
-        getCityByIp()
-    }, [props, check])
+    // useEffect(() => {
+    //     const getCityByIp = async () => {
+    //         props.setLoading(true) 
+    //         // const city = await getUserIpLocation()
+    //         const city = await getUserIpCity()         
+    //         const weatherData = await fetchWeatherByCity(city)
+    //         if(weatherData.error) {
+    //             props.setSearchError(weatherData.error.message)
+    //             props.setLoading(false)
+    //             return
+    //         }
+    //         props.search(weatherData)
+    //         props.setCheckBox(false)
+    //         props.setLoading(false)
+    //     }
+    //     getCityByIp()
+    // }, [])
 
 
     const onSearchButtonClick = async (event) => { 
