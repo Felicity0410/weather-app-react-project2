@@ -13,6 +13,9 @@
     border: 2px solid darkblue;
     color: darkblue;
     font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

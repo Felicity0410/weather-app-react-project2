@@ -1,10 +1,13 @@
 import './DailyResult.css'
 import Accordion from 'react-bootstrap/Accordion';
 
+
 const DailyResult = (props) => {
     const todayInfo = props.weather.forecast.forecastday[0]
     const secondDayInfo = props.weather.forecast.forecastday[1]
     const thirdDayInfo = props.weather.forecast.forecastday[2]
+    const accordionTheme = props.setDailyTheme
+    console.log('from accordionTheme',accordionTheme);
     
     
     const dayArray = ['Sun','Mon' ,'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -15,13 +18,24 @@ const DailyResult = (props) => {
 
     const tempNum = (tempStr) => Math.ceil(parseFloat(tempStr))
 
+    
+    const accordionButtonClassName = accordionTheme ? `daily-header button` : `daily-header button`
+
+    // const accordionButtonClassName = (accordionTheme) => {
+    //     if(accordionTheme) {
+    //         return `daily-header button:active`
+    //     } 
+    //     return `daily-header button`
+    // }
+
+  
 
     return (
         <>
         <h5>Daily</h5>
-        <Accordion className='daily-info'>
+        <Accordion className='daily-info' >
             <Accordion.Item eventKey="0" className='daily-item'>
-                <Accordion.Header className='daily-header'>
+                <Accordion.Header className={accordionButtonClassName} >
                         <p>Today</p>                  
                         <img src={todayInfo.day.condition.icon} alt='weather icon'/>
                     

@@ -1,23 +1,38 @@
 h5 {
     text-align: left;
 }
+
+
+
 .daily-item .daily-header button{
     color: darkblue;
+    background-color: #fff;
     font-size: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 5px;
-    border: 1px  #eee;
     box-shadow: 2px 2px 5px 4px rgba(0, 0, 0, 0.2);
-
 }
+
+/* .daily-item .daily-header button{
+    background-color: #333;
+    color: #fff;
+} */
+
+
+
+
 
 .daily-item .daily-header .accordion-button::after {
     margin-left: 10px;
     color: darkblue;
     width: 13px;
     background-size: 13px;
+}
+
+.daily-item .daily-header .accordion-button:active{
+    color: #fff;
 }
 
 .daily-item .daily-header button>div {

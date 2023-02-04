@@ -94,6 +94,11 @@ const SearchCity = (props) => {
             props.setLoading(false)
             return
         }
+        if(!weatherData.alters){
+            props.setAlert(false)
+        } else {
+            props.setAlert(weatherData.alters)
+        }
         props.search(weatherData)
         props.setCheckBox(check)
         props.setLoading(false)
