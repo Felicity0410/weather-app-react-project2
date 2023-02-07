@@ -42,7 +42,7 @@ const SearchCity = (props) => {
 
      
     useEffect(() => {
-        if(city) {
+        if(city && city.length > 1 ) {
             setButton(false)
         } else {
             setButton(true)
